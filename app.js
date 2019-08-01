@@ -42,7 +42,7 @@ app.all('*', function (req, res, next) {
   app.use('/api/upImg', upImg);
   app.use('/api/deleteImg', deleteImg);
   app.use('/api/picture', picture);
-  app.use('/api/sendSms', sendSms);
+  // app.use('/api/sendSms', sendSms);
   app.use('/api/registered', registered);
   app.use('/api/login', login);
 

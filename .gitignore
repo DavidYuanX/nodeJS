@@ -13,3 +13,5 @@ public/images/2jrvqhb63lx_1114261.jpg
 public/images/00noemsshb68_image.jpg
 cert/1940624_voyage2030.club.key
 cert/1940624_voyage2030.club.pem
+*.xml
+*.iml
