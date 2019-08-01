@@ -20,10 +20,10 @@ app.set('port', port);
  * Create HTTPS server.
  */
 
-var options = {
-    key: fs.readFileSync('cert/1940624_voyage2030.club.key'),
-    cert: fs.readFileSync('cert/1940624_voyage2030.club.pem')
-};
+// var options = {
+//     key: fs.readFileSync('cert/1940624_voyage2030.club.key'),
+//     cert: fs.readFileSync('cert/1940624_voyage2030.club.pem')
+// };
 //var server = https.createServer(options,app);
 var server = https.createServer(app);
 
