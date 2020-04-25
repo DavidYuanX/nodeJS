@@ -15,7 +15,7 @@ var deleteImg = require('./routes/deleteImg');
 
 var app = express();
 var bodyParser = require('body-parser');
-// 创建 application/x-www-form-urlencoded 编码解析
+// 创建 application/x-www.js-form-urlencoded 编码解析
 
 app.use(bodyParser.urlencoded({ extended: true }));
 // view engine setup
@@ -36,30 +36,32 @@ app.all('*', function (req, res, next) {
     next();
 });
 
-  app.use('/', indexRouter);
-  app.use('/users', usersRouter);
-  app.use('/api/verifyTel', verifyTel);
-  app.use('/api/upImg', upImg);
-  app.use('/api/deleteImg', deleteImg);
-  app.use('/api/picture', picture);
-  // app.use('/api/sendSms', sendSms);
-  app.use('/api/registered', registered);
-  app.use('/api/login', login);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/api/verifyTel', verifyTel);
+app.use('/api/upImg', upImg);
+app.use('/api/deleteImg', deleteImg);
+app.use('/api/picture', picture);
+// app.use('/api/sendSms', sendSms);
+app.use('/api/registered', registered);
+app.use('/api/login', login);
+app.use('/public', express.static('public'));
+// app.use('/static', express.static(__dirname + 'views/static'));
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.use(function (req, res, next) {
+    next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use(function (err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
